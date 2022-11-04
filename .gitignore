@@ -1,2 +1,9 @@
 # vim every day
 *.swp
+node_modules
+.parcel-cache/
+dist/
+.env
+.DS_Store
+coverage/
+.vscode/
