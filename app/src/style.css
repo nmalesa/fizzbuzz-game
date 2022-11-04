@@ -4,17 +4,27 @@ body {
     justify-content: center;
 }
 
+h1 {
+    text-align: center;
+}
+
 .img-container {
     width: 200px;
     height: 250px;
 }
 
-.buzz-img {
+.fizz-img {
     width: 50px;
     height: 50px;
+}
+
+.buzz-img {
+    width: 50px;
+    height: 70px;
 }
 
 .fizz-img {
     max-width: 100%;
     height: auto;
+    padding: 20px;
 }
