@@ -30,6 +30,9 @@ const App = () => {
   return (
     <div>
       <h1>FizzBuzz</h1>
+      {Array(fizz).fill(<Fizz />)}
+      {Array(buzz).fill(<Buzz />)}
+      {Array(fizzbuzz).fill(<FizzBuzz />)}
       <div className="img-container">
         <img
           className="drink-img"
