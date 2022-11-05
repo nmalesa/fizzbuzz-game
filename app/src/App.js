@@ -1,29 +1,32 @@
 import { createRoot } from "react-dom/client";
+import { useState } from "react";
+import Button from "./components/Button";
 import Fizz from "./components/Fizz";
 import Buzz from "./components/Buzz";
 import FizzBuzz from "./components/FizzBuzz";
-import getFizzBuzz from "./logic/logic";
+import { getFizzBuzz } from "./logic/logic";
 
 const App = () => {
-  getFizzBuzz();
+  const [target, setTarget] = useState("");
 
   return (
     <div>
       <h1>FizzBuzz</h1>
-      <Fizz />
-      <Buzz />
-      <FizzBuzz />
       <div className="img-container">
-        {/* <img
-          className="buzz-img"
-          src={require("../assets/buzz.png")}
-          alt="Illustration of bee"
-        /> */}
         <img
           className="drink-img"
           src={require("./assets/drink.jpg")}
           alt="Illustration of fizzy drink with straw"
         />
+        <button
+          onClick={() =>
+            setTarget(Math.floor(Math.random() * 100 + 1).toString())
+          }
+        >
+          Get Number
+        </button>
+        <p>How many times will the word "FizzBuzz" appear?</p>
+        <p>{target}</p>
       </div>
     </div>
   );
