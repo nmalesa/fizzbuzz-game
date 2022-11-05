@@ -1,5 +1,5 @@
 import { createRoot } from "react-dom/client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "./components/Button";
 import Fizz from "./components/Fizz";
 import Buzz from "./components/Buzz";
@@ -8,6 +8,11 @@ import { getFizzBuzz } from "./logic/logic";
 
 const App = () => {
   const [target, setTarget] = useState("");
+  const [guess, setGuess] = useState("")
+
+  useEffect(() => {
+    setTarget(Math.floor(Math.random() * 100 + 1).toString())
+  }, [])
 
   return (
     <div>
@@ -18,15 +23,19 @@ const App = () => {
           src={require("./assets/drink.jpg")}
           alt="Illustration of fizzy drink with straw"
         />
-        <button
-          onClick={() =>
-            setTarget(Math.floor(Math.random() * 100 + 1).toString())
-          }
-        >
-          Get Number
-        </button>
-        <p>How many times will the word "FizzBuzz" appear?</p>
         <p>{target}</p>
+        <p>How many times will the word "FizzBuzz" appear?</p>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            getFizzBuzz(target);
+          }}
+        >
+          <label htmlFor="guess">
+            Enter Your Guess
+            <input id="guess" value={guess} placeholder="Guess" onChange={(e) => setGuess(e.target.value)}/>
+          </label>
+        </form>
       </div>
     </div>
   );

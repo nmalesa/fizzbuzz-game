@@ -1,4 +1,6 @@
-export const getFizzBuzz = (number) => {
+export const getFizzBuzz = (target) => {
+  const number = parseInt(target);
+
   for (let idx = 1; idx <= number; idx++) {
     if (idx % 15 === 0) console.log("FizzBuzz");
     else if (idx % 3 === 0) console.log("Fizz");
