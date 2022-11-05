@@ -1,6 +1,4 @@
 const Fizz = () => {
-  console.log("I am rendered");
-
   return (
     <div>
       <img

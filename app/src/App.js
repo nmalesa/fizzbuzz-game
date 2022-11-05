@@ -30,9 +30,9 @@ const App = () => {
   return (
     <div>
       <h1>FizzBuzz</h1>
-      {Array(fizz).fill(<Fizz />)}
-      {Array(buzz).fill(<Buzz />)}
-      {Array(fizzbuzz).fill(<FizzBuzz />)}
+      {Array.from(Array(fizz)).map((_, idx) => <Fizz key={idx} />)}
+      {Array.from(Array(buzz)).map((_, idx) => <Buzz key={idx} />)}
+      {Array.from(Array(fizzbuzz)).map((_, idx) => <FizzBuzz key={idx} />)}
       <div className="img-container">
         <img
           className="drink-img"
