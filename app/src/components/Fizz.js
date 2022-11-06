@@ -1,11 +1,11 @@
-import { useRef } from 'react'
+import { useRef } from "react";
 
 const Fizz = () => {
   const PositionStyle = useRef({
-    position: 'absolute',
-    top: 100*Math.random() + "%",
-    left: 100*Math.random() + "%"
-  })
+    position: "absolute",
+    top: 100 * Math.random() + "%",
+    left: 100 * Math.random() + "%",
+  });
 
   return (
     <div>

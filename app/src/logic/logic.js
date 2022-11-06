@@ -1,12 +1,12 @@
 export const getFizzBuzz = (target) => {
   const number = parseInt(target);
-  
+
   const gameData = {
     fizzbuzz: 0,
     fizz: 0,
     buzz: 0,
     numbers: [],
-  }
+  };
 
   for (let idx = 1; idx <= number; idx++) {
     if (idx % 15 === 0) gameData.fizzbuzz++;

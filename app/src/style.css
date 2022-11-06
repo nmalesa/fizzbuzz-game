@@ -1,21 +1,22 @@
+* {
+    box-sizing: border-box;
+    color: #333;
+}
+
 body {
     font-family: "Poor Story", Verdana, Tahoma, sans-serif;
     display: flex;
-    justify-content: center;
+    margin: 0;
 }
 
 h1 {
     text-align: center;
+    font-size: 5vw;
 }
 
 p {
     padding: 20px;
     text-align: center;
-}
-
-.img-container {
-    width: 200px;
-    height: 250px;
 }
 
 .fizz-img {
@@ -34,7 +35,11 @@ p {
 }
 
 .drink-img {
-    max-width: 100%;
+    width: 20vw;
     height: auto;
-    padding: 20px;
+    justify-content: center;
+}
+
+.target {
+    font-size: 5vw;
 }
