@@ -54,10 +54,6 @@ const App = () => {
           </label>
           <button>Submit</button>
         </form>
-        {/* <p>Fizz: {fizz}</p>
-        <p>Buzz: {buzz}</p>
-        <p>FizzBuzz: {fizzbuzz}</p>
-        <p>Numbers: {numbers}</p> */}
       </div>
     </div>
   );
