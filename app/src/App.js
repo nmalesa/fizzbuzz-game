@@ -1,9 +1,9 @@
 import { createRoot } from "react-dom/client";
 import { useState, useEffect } from "react";
-import Button from "./components/Button";
 import Fizz from "./components/Fizz";
 import Buzz from "./components/Buzz";
 import FizzBuzz from "./components/FizzBuzz";
+import Results from "./components/Results";
 import { getFizzBuzz } from "./logic/logic";
 
 const App = () => {
@@ -13,6 +13,7 @@ const App = () => {
   const [buzz, setBuzz] = useState(0);
   const [fizzbuzz, setFizzbuzz] = useState(0);
   const [numbers, setNumbers] = useState([]);
+  const [showResults, setShowResults] = useState(false)
 
   useEffect(() => {
     setTarget(Math.floor(Math.random() * 100 + 1).toString());
@@ -31,15 +32,17 @@ const App = () => {
     <div>
       <h1>FizzBuzz</h1>
       <h2>Save your fizzy beverage from the buzzy bees!</h2>
-      {Array.from(Array(fizz)).map((_, idx) => (
-        <Fizz key={idx} />
-      ))}
-      {Array.from(Array(buzz)).map((_, idx) => (
-        <Buzz key={idx} />
-      ))}
-      {Array.from(Array(fizzbuzz)).map((_, idx) => (
-        <FizzBuzz key={idx} />
-      ))}
+      <div className="bees-and-bubble-container">
+        {Array.from(Array(fizz)).map((_, idx) => (
+          <Fizz key={idx} />
+        ))}
+        {Array.from(Array(buzz)).map((_, idx) => (
+          <Buzz key={idx} />
+        ))}
+        {Array.from(Array(fizzbuzz)).map((_, idx) => (
+          <FizzBuzz key={idx} />
+        ))}
+      </div>
       <img
         className="drink-img"
         src={require("./assets/drink.jpg")}
@@ -52,8 +55,8 @@ const App = () => {
           multiples of five will print "Buzz". Multiples of both three and five
           print "FizzBuzz"!
           <br />
-          The object of the game is to guess how many times the word "FizzBuzz" will
-          appear.
+          The object of the game is to guess how many times the word "FizzBuzz"
+          will appear.
         </p>
         <p className="target">{target}</p>
         <p className="question">
@@ -63,6 +66,7 @@ const App = () => {
           onSubmit={(e) => {
             e.preventDefault();
             getGameData(target);
+            setShowResults(true);
           }}
         >
           <label htmlFor="guess">
@@ -77,6 +81,7 @@ const App = () => {
           <button>Submit</button>
         </form>
       </div>
+      {showResults ? <Results fizzbuzz={fizzbuzz} guess={guess} /> : <></>}
     </div>
   );
 };
