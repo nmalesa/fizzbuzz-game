@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-const FizzBuzzImg = ({img, alt}) => {
+const FizzBuzzImg = ({ img, alt }) => {
   const position = useRef({
     position: "absolute",
     top: 100 * Math.random() + "%",
@@ -8,10 +8,10 @@ const FizzBuzzImg = ({img, alt}) => {
   });
 
   const getImage = (img) => {
-    if (img === "fizz") return require("../assets/fizz.png")
-    else if (img === "buzz") return require("../assets/buzz.png")
-    else if (img === "fizzbuzz") return require("../assets/fizzbuzz.png")
-  }
+    if (img === "fizz") return require("../assets/fizz.png");
+    else if (img === "buzz") return require("../assets/buzz.png");
+    else if (img === "fizzbuzz") return require("../assets/fizzbuzz.png");
+  };
 
   return (
     <div>

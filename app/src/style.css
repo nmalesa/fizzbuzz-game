@@ -5,13 +5,38 @@
 
 body {
     font-family: "Poor Story", Verdana, Tahoma, sans-serif;
-    display: flex;
-    margin: 0;
+    display: grid;
+    height: 100%;
+    grid-template-areas:
+        "h h h h h h h h h h h h"
+        "r r r d d d d d d d d d"
+        "g g g d d d d d d d d d"
+        "g g g d d d d d d d d d"
+}
+
+.header {
+    grid-area: h;
+}
+
+.rules {
+    grid-area: r;
+}
+
+.gameplay {
+    grid-area: g;
+}
+
+.display {
+    grid-area: d;
 }
 
 h1 {
     text-align: center;
     font-size: 5vw;
+}
+
+h2 {
+    text-align: center;
 }
 
 .bees-and-bubbles-container {
@@ -25,24 +50,28 @@ p {
 }
 
 .fizz {
-    width: 50px;
+    width: 3em;
     height: auto;
+    border-radius: 50%;
 }
 
 .buzz {
-    width: 50px;
+    width: 3em;
     height: auto;
+    border-radius: 20%;
 }
 
 .fizzbuzz {
-    width: 100px;
+    width: 5em;
     height: auto;
+    border-radius: 20%;
+    border-color: yellow;
+    border-radius: 2px;
 }
 
 .drink-img {
     width: 20vw;
     height: auto;
-    justify-content: center;
 }
 
 .target {
