@@ -1,52 +1,56 @@
 * {
     box-sizing: border-box;
-    color: #333;
 }
 
 body {
-    font-family: "Poor Story", Verdana, Tahoma, sans-serif;
-    display: grid;
-    height: 100%;
-    grid-template-areas:
-        "h h h h h h h h h h h h"
-        "r r r d d d d d d d d d"
-        "g g g d d d d d d d d d"
-        "g g g d d d d d d d d d"
+    font-family: "Poor Story", Arial, Helvetica, sans-serif;
 }
 
 .header {
-    grid-area: h;
+    grid-area: header;
+    background-color: aqua;
+    padding: 30px;
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+        'header header header header header header' 
+        'rules rules display display display display' 
+        'game game display display display display'
+        'footer footer footer footer footer footer';
+}
+
+.rules, .right {
+    padding: 10px;
 }
 
 .rules {
-    grid-area: r;
+    grid-area: rules;
+    background-color: pink;
 }
 
-.gameplay {
-    grid-area: g;
+.game {
+    grid-area: game;
+    background-color: red;
 }
 
 .display {
-    grid-area: d;
+    grid-area: display;
+    background-color: green;
 }
 
-h1 {
+.footer {
+    grid-area: footer;
+    background-color: purple;
+    padding: 10px;
     text-align: center;
-    font-size: 5vw;
 }
 
-h2 {
-    text-align: center;
-}
-
-.bees-and-bubbles-container {
-    width: 25vw;
+.drink-img {
+    width: 20vw;
     height: auto;
-}
-
-p {
-    padding: 20px;
-    text-align: center;
 }
 
 .fizz {
@@ -69,11 +73,14 @@ p {
     border-radius: 2px;
 }
 
-.drink-img {
-    width: 20vw;
-    height: auto;
-}
-
-.target {
-    font-size: 5vw;
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-areas: 
+            'header header header header header header' 
+            'rules rules rules rules rules rules' 
+            'game game game game game game'
+            'display display display display display display' 
+            'display display display display display display' 
+            'footer footer footer footer footer footer';
+    }
 }
