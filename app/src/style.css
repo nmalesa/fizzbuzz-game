@@ -24,17 +24,17 @@ p {
     text-align: center;
 }
 
-.fizz-img {
+.fizz {
     width: 50px;
     height: auto;
 }
 
-.buzz-img {
+.buzz {
     width: 50px;
     height: auto;
 }
 
-.fizzbuzz-img {
+.fizzbuzz {
     width: 100px;
     height: auto;
 }

@@ -1,8 +1,6 @@
 import { createRoot } from "react-dom/client";
 import { useState, useEffect } from "react";
-import Fizz from "./components/Fizz";
-import Buzz from "./components/Buzz";
-import FizzBuzz from "./components/FizzBuzz";
+import FizzBuzzImg from "./components/FizzBuzzImg";
 import Results from "./components/Results";
 import { getFizzBuzz } from "./logic/logic";
 
@@ -34,13 +32,13 @@ const App = () => {
       <h2>Save your fizzy beverage from the buzzy bees!</h2>
       <div className="bees-and-bubble-container">
         {Array.from(Array(fizz)).map((_, idx) => (
-          <Fizz key={idx} />
+          <FizzBuzzImg key={idx} img={"fizz"} alt={"Illustration of bubble with the word 'FIZZ'"}/>
         ))}
         {Array.from(Array(buzz)).map((_, idx) => (
-          <Buzz key={idx} />
+          <FizzBuzzImg key={idx} img={"buzz"} alt={"Illustration of bee with the word 'BUZZ'"}/>
         ))}
         {Array.from(Array(fizzbuzz)).map((_, idx) => (
-          <FizzBuzz key={idx} />
+          <FizzBuzzImg key={idx} img={"fizzbuzz"} alt={"Illustration of bubble and bee with the word 'FIZZBUZZ'"}/>
         ))}
       </div>
       <img
