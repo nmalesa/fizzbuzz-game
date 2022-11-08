@@ -1,4 +1,4 @@
-export const getFizzBuzz = (target) => {
+const getFizzBuzz = (target) => {
   const number = parseInt(target);
 
   const gameData = {
@@ -7,6 +7,11 @@ export const getFizzBuzz = (target) => {
     buzz: 0,
     numbers: [],
   };
+
+  if (!target) {
+    console.error("Error: Target not provided");
+    return gameData;
+  }
 
   for (let idx = 1; idx <= number; idx++) {
     if (idx % 15 === 0) gameData.fizzbuzz++;
@@ -17,3 +22,5 @@ export const getFizzBuzz = (target) => {
 
   return gameData;
 };
+
+export default getFizzBuzz;

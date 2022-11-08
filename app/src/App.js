@@ -2,7 +2,7 @@ import { createRoot } from "react-dom/client";
 import { useState, useEffect } from "react";
 import FizzBuzzImg from "./components/FizzBuzzImg";
 import Results from "./components/Results";
-import { getFizzBuzz } from "./logic/logic";
+import getFizzBuzz from "./logic/logic"
 
 const App = () => {
   const [target, setTarget] = useState("");
@@ -38,6 +38,7 @@ const App = () => {
           from 1 to the target, multiples of three will print "Fizz", and
           multiples of five will print "Buzz". Multiples of both three and five
           will print "FizzBuzz"!
+          <br />
           <br />
           The object of the game is to save your fizzy drink by guessing how
           many times the word "FizzBuzz" will appear.
