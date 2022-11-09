@@ -2,7 +2,7 @@ import { createRoot } from "react-dom/client";
 import { useState, useEffect } from "react";
 import FizzBuzzImg from "./components/FizzBuzzImg";
 import Results from "./components/Results";
-import getFizzBuzz from "./logic/logic"
+import getFizzBuzz from "./logic/logic";
 
 const App = () => {
   const [target, setTarget] = useState("");
@@ -30,43 +30,45 @@ const App = () => {
     <div className="grid-container">
       <div className="header">
         <h1>FizzBuzz</h1>
-        <h2>Save your fizzy beverage from the buzzy bees!</h2>
+        <h2>Save your fizzy drink from the buzzy bees!</h2>
       </div>
       <div className="rules">
-        <p>
+        <p className="rules-text">
           In FizzBuzz, you are given a random target number. For every number
           from 1 to the target, multiples of three will print "Fizz", and
           multiples of five will print "Buzz". Multiples of both three and five
           will print "FizzBuzz"!
           <br />
           <br />
-          The object of the game is to save your fizzy drink by guessing how
-          many times the word "FizzBuzz" will appear.
+          The object of the game is to guess how many times the word "FizzBuzz"
+          will appear.
         </p>
       </div>
       <div className="game">
-        <p className="target">{target}</p>
-        <p className="question">
-          How many times will the word "FizzBuzz" appear?
-        </p>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            getGameData(target);
-            setShowResults(true);
-          }}
-        >
-          <label htmlFor="guess">
-            Enter Your Guess
-            <input
-              id="guess"
-              value={guess}
-              placeholder="Guess"
-              onChange={(e) => setGuess(e.target.value)}
-            />
-          </label>
-          <button>Submit</button>
-        </form>
+        <div className="game-interface">
+          <p className="target">{target}</p>
+          <p className="question">
+            How many times will the word "FizzBuzz" appear?
+          </p>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              getGameData(target);
+              setShowResults(true);
+            }}
+          >
+            <label htmlFor="guess">
+              Enter Your Guess
+              <input
+                id="guess"
+                value={guess}
+                placeholder="FizzBuzz number"
+                onChange={(e) => setGuess(e.target.value)}
+              />
+            </label>
+            <button>Submit</button>
+          </form>
+        </div>
         {showResults ? <Results fizzbuzz={fizzbuzz} guess={guess} /> : <></>}
       </div>
       <div className="display">
@@ -99,7 +101,6 @@ const App = () => {
           alt="Illustration of fizzy drink with straw"
         />
       </div>
-      <div className="footer"></div>
     </div>
   );
 };

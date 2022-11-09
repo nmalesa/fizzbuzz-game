@@ -1,11 +1,7 @@
-const title = "Hello, world!"
+const title = "Hello, world!";
 
 const Test = () => {
-    return (
-        <div>
-            {title}
-        </div>
-    )
-}
+  return <div>{title}</div>;
+};
 
 export default Test;
