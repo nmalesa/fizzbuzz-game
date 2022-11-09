@@ -46,10 +46,6 @@ const App = () => {
       </div>
       <div className="game">
         <div className="game-interface">
-          <p className="target">{target}</p>
-          <p className="question">
-            How many times will the word "FizzBuzz" appear?
-          </p>
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -57,6 +53,10 @@ const App = () => {
               setShowResults(true);
             }}
           >
+            <p className="target">{target}</p>
+            <p className="question">
+              How many times will "FizzBuzz" appear?
+            </p>
             <label htmlFor="guess">
               Enter Your Guess
               <input

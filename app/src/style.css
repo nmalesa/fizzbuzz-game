@@ -16,7 +16,7 @@ body {
 
 .header {
     grid-area: header;
-    background-color: aqua;
+    /* background-color: aqua; */
     text-align: center;
 }
 
@@ -35,7 +35,7 @@ h2 {
 
 .rules {
     grid-area: rules;
-    background-color: pink;
+    /* background-color: pink; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -43,7 +43,7 @@ h2 {
 
 .game {
     grid-area: game;
-    background-color: red;
+    /* background-color: red; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,7 +52,7 @@ h2 {
 
 .display {
     grid-area: display;
-    background-color: green;
+    /* background-color: green; */
 }
 
 .rules-text {
@@ -60,15 +60,26 @@ h2 {
 }
 
 .game-interface {
-    width: 300px;
+    width: 360px;
+}
+
+.target {
+    font-size: 60px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.question {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px;
 }
 
 form {
     border-radius: 6px;
-    background: #faeff0;
     box-shadow: 0px 0px 12px #aaa, -0px -0px 12px #fff;
-    margin: 0px 25px 0px 0px;
-    padding: 35px 15px 15px 15px;
+    margin: 10px;
+    padding: 15px;
 }
 
 label {
@@ -76,16 +87,17 @@ label {
 }
 
 input {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
+    font-family: "Poor Story", Arial, Helvetica, sans-serif;
     font-size: 18px;
     height: 30px;
 }
 
 button {
-    background-color: #ad343e;
+    background-color: #fec609;
     padding: 5px 25px;
-    color: white;
     font-size: 18px;
+    font-family: "Poor Story", Arial, Helvetica, sans-serif;;
     border: #333 1px solid;
     border-radius: 5px;
     display: block;
@@ -119,7 +131,7 @@ button {
     height: auto;
     border-radius: 30%;
     border-style: solid;
-    border-color: black;
+    border-color: #fec609;
     border-width: 2px;
 }
 
