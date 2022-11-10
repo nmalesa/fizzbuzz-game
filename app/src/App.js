@@ -1,7 +1,6 @@
 import { createRoot } from "react-dom/client";
 import { useState, useEffect } from "react";
 import FizzBuzzImg from "./components/FizzBuzzImg";
-import Results from "./components/Results";
 import Modal from "./components/Modal";
 import getFizzBuzz from "./logic/logic";
 
@@ -12,7 +11,6 @@ const App = () => {
   const [buzz, setBuzz] = useState(0);
   const [fizzbuzz, setFizzbuzz] = useState(0);
   const [numbers, setNumbers] = useState([]);
-  const [showResults, setShowResults] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
@@ -33,7 +31,7 @@ const App = () => {
   const refreshGame = () => {
     toggleModal();
     window.location.reload();
-  }
+  };
 
   return (
     <div className="grid-container">
@@ -59,7 +57,6 @@ const App = () => {
             onSubmit={(e) => {
               e.preventDefault();
               getGameData(target);
-              setShowResults(true);
               toggleModal();
             }}
           >
@@ -113,11 +110,31 @@ const App = () => {
           <div className="results">
             <p className="results-label">FizzBuzz: {fizzbuzz}</p>
             <p className="results-label">Your Guess: {guess}</p>
-            <p>Congratulations! Enjoy your delicious fizzy drink!</p>
+            {guess === target ? (
+              <p>Congratulations! Enjoy your delicious fizzy drink!</p>
+            ) : (
+              <p>Oh, no! The buzzy bees drank your fizzy drink!</p>
+            )}
             <button onClick={refreshGame}>Play Again</button>
           </div>
         </Modal>
       ) : null}
+      <div className="main">
+        <div className="container">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
     </div>
   );
 };
