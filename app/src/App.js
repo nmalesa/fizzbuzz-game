@@ -1,6 +1,7 @@
 import { createRoot } from "react-dom/client";
 import { useState, useEffect } from "react";
 import Rules from "./components/Rules";
+import FizzBuzzImg from "./components/FizzBuzzImg";
 import Modal from "./components/Modal";
 import getFizzBuzz from "./logic/logic";
 
@@ -9,6 +10,8 @@ const App = () => {
   const [guess, setGuess] = useState("");
   const [gameData, setGameData] = useState([]);
   const [fizzbuzz, setFizzBuzz] = useState("");
+  const [fizz, setFizz] = useState(0);
+  const [buzz, setBuzz] = useState(0);
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
@@ -17,17 +20,25 @@ const App = () => {
 
   const getGameData = (target) => {
     const gameData = getFizzBuzz(target);
+    let fizz = 0;
+    let buzz = 0;
     let fizzbuzz = 0;
-    setGameData(gameData);
 
     for (let idx = 1; idx < gameData.length; idx++) {
-      if (gameData[idx] === "fizzbuzz") {
+      if (gameData[idx] === "fizz") {
+        fizz++;
+      } else if (gameData[idx] === "buzz") {
+        buzz++;
+      } else if (gameData[idx] === "fizzbuzz") {
         fizzbuzz++;
       }
     }
 
     const stringifiedFizzBuzz = fizzbuzz.toString();
 
+    setGameData(gameData);
+    setFizz(fizz);
+    setBuzz(buzz);
     setFizzBuzz(stringifiedFizzBuzz);
   };
 
@@ -85,16 +96,29 @@ const App = () => {
       <div className="honeycomb">
         <div className="hexagon-grid">
           <div className="cells-container">
-            {gameData.map((data, idx) =>  {
-             return (
-                <div key={idx}>
-                  <p className="cell-text">{data.toString().toUpperCase()}</p>
-                </div>
-              )
-             }
-            )}
+            {gameData.map((data, idx) => (
+              <div key={idx}>
+                <p className="cell-text">{data.toString().toUpperCase()}</p>
+              </div>
+            ))}
           </div>
         </div>
+      </div>
+      <div>
+        {Array.from(Array(fizz)).map((_, idx) => (
+          <FizzBuzzImg
+            key={idx}
+            img={"fizz"}
+            alt={"Illustration of bubble with the word 'FIZZ'"}
+          />
+        ))}
+        {Array.from(Array(buzz)).map((_, idx) => (
+          <FizzBuzzImg
+            key={idx}
+            img={"buzz"}
+            alt={"Illustration of bee with the word 'BUZZ'"}
+          />
+        ))}
       </div>
       {showModal ? (
         <Modal>
