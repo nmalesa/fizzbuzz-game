@@ -14,14 +14,12 @@ const FizzBuzzImg = ({ img, alt }) => {
   };
 
   return (
-    <div>
-      <img
-        className={img}
-        src={getImage(img)}
-        alt={alt}
-        // style={position.current}
-      />
-    </div>
+    <img
+      className={img}
+      src={getImage(img)}
+      alt={alt}
+      // style={position.current}
+    />
   );
 };
 

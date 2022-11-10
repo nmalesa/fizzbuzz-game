@@ -1,5 +1,6 @@
 import { createRoot } from "react-dom/client";
 import { useState, useEffect } from "react";
+import Rules from "./components/Rules";
 import FizzBuzzImg from "./components/FizzBuzzImg";
 import Modal from "./components/Modal";
 import getFizzBuzz from "./logic/logic";
@@ -8,10 +9,7 @@ const App = () => {
   const [target, setTarget] = useState("");
   const [guess, setGuess] = useState("");
   const [gameData, setGameData] = useState([]);
-  const [fizz, setFizz] = useState(0);
-  const [buzz, setBuzz] = useState(0);
-  const [fizzbuzz, setFizzbuzz] = useState(0);
-  const [numbers, setNumbers] = useState([]);
+  const [fizzbuzz, setFizzBuzz] = useState(0);
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
@@ -20,12 +18,16 @@ const App = () => {
 
   const getGameData = (target) => {
     const gameData = getFizzBuzz(target);
+    let fizzbuzz = 0;
     setGameData(gameData);
 
-    // setFizz(gameData.fizz);
-    // setBuzz(gameData.buzz);
-    // setFizzbuzz(gameData.fizzbuzz);
-    // setNumbers(gameData.numbers);
+    for (let idx = 1; idx < gameData.length; idx++) {
+      if (gameData[idx] === "fizzbuzz") {
+        fizzbuzz++
+      }
+    }
+
+    setFizzBuzz(fizzbuzz);
   };
 
   const toggleModal = () => setShowModal(!showModal);
@@ -41,18 +43,7 @@ const App = () => {
         <h1>FizzBuzz</h1>
         <h2>Save your fizzy drink from the buzzy bees!</h2>
       </div>
-      <div className="rules">
-        <p className="rules-text">
-          In FizzBuzz, you are given a random target number. For every number
-          from 1 to the target, multiples of three will print "Fizz", and
-          multiples of five will print "Buzz". Multiples of both three and five
-          will print "FizzBuzz"!
-          <br />
-          <br />
-          The object of the game is to guess how many times the word "FizzBuzz"
-          will appear.
-        </p>
-      </div>
+      <Rules />
       <div className="game">
         <div className="game-interface">
           <form

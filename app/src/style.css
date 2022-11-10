@@ -118,28 +118,26 @@ button {
     width: 360px;
 }
 
-.fizz {
-    width: 3em;
-    height: auto;
-    border-radius: 50%;
+.fizz, .buzz, .fizzbuzz {
     z-index: 5;
+}
+
+.fizz {
+    width: 30%;
+    border-radius: 50%;
 }
 
 .buzz {
-    width: 3em;
-    height: auto;
+    width: 30%;
     border-radius: 20%;
-    z-index: 5;
 }
 
 .fizzbuzz {
-    width: 5em;
-    height: auto;
+    width: 30%;
     border-radius: 30%;
-    border-style: solid;
+    /* border-style: solid;
     border-color: #fec609;
-    border-width: 2px;
-    z-index: 5;
+    border-width: 2px; */
 }
 
 .results p {
@@ -185,7 +183,7 @@ button {
 }
   
 .cells-container {
-    font-size: 0;
+    font-size: 0
 }
   
 .cells-container div {
