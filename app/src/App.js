@@ -1,7 +1,6 @@
 import { createRoot } from "react-dom/client";
 import { useState, useEffect } from "react";
 import Rules from "./components/Rules";
-import FizzBuzzImg from "./components/FizzBuzzImg";
 import Modal from "./components/Modal";
 import getFizzBuzz from "./logic/logic";
 
@@ -86,33 +85,14 @@ const App = () => {
       <div className="honeycomb">
         <div className="hexagon-grid">
           <div className="cells-container">
-            {gameData.map((data, idx) => {
-              if (data === "fizz") {
-                return (
-                  <div key={idx} className="cell">
-                    <FizzBuzzImg img="fizz" alt="Test" />
-                  </div>
-                );
-              } else if (data === "buzz") {
-                return (
-                  <div key={idx} className="cell">
-                    <FizzBuzzImg img="buzz" alt="Test" />
-                  </div>
-                );
-              } else if (data === "fizzbuzz") {
-                return (
-                  <div key={idx} className="cell">
-                    <FizzBuzzImg img="fizzbuzz" alt="Test" />
-                  </div>
-                );
-              }
-
-              return (
-                <div key={idx} className="cell">
-                  <p className="cell-text">{data}</p>
+            {gameData.map((data, idx) =>  {
+             return (
+                <div key={idx}>
+                  <p className="cell-text">{data.toString().toUpperCase()}</p>
                 </div>
-              );
-            })}
+              )
+             }
+            )}
           </div>
         </div>
       </div>

@@ -133,11 +133,11 @@ button {
 }
 
 .fizzbuzz {
-    width: 30%;
+    width: 90%;
     border-radius: 30%;
-    /* border-style: solid;
-    border-color: #fec609;
-    border-width: 2px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .results p {
@@ -183,7 +183,7 @@ button {
 }
   
 .cells-container {
-    font-size: 0
+    font-size: 0;
 }
   
 .cells-container div {
@@ -191,6 +191,7 @@ button {
     margin: var(--m);
     height: calc(var(--s) * 1.1547);
     display: inline-block;
+    text-align: center;
     font-size:initial;
     clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
     background: #fec609;
@@ -205,12 +206,8 @@ button {
     shape-outside: repeating-linear-gradient(#0000 0 calc(var(--f) - 3px), #000 0 var(--f));
 }
 
-.cell {
-    text-align: center;
-}
-
 .cell-text {
-    font-size: 18px;
+    font-size: 13px;
 }
 
 @media (max-width: 600px) {
