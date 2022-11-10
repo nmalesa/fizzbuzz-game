@@ -10,13 +10,12 @@ body {
     display: grid;
     grid-template-areas: 
         'header header header header header header' 
-        'rules display display display display display' 
-        'game display display display display display';
+        'rules display display display display honeycomb' 
+        'game display display display display honeycomb';
 }
 
 .header {
     grid-area: header;
-    /* background-color: aqua; */
     text-align: center;
 }
 
@@ -29,7 +28,7 @@ h2 {
     margin: 0;
 }
 
-.rules, .game, .display {
+.rules, .game, .display, .honeycomb {
     padding: 10px;
 }
 
@@ -50,6 +49,10 @@ h2 {
 
 .display {
     grid-area: display;
+}
+
+.honeycomb {
+    grid-area: honeycomb;
 }
 
 .rules-text {
@@ -102,7 +105,7 @@ button {
     cursor: pointer;
 }
 
-.bees-and-bubble-container {
+.bees-and-bubbles-container {
     width: 25vw;
     height: auto;
 }
@@ -167,18 +170,18 @@ button {
     background: #faeff0;
 }
 
-.main {
+.hexagon-grid {
     display:flex;
-    --s: 100px;  /* size  */
-    --m: 4px;    /* margin */
+    --s: 50px;  /* size  */
+    --m: 2px;    /* margin */
     --f: calc(var(--s) * 1.732 + 4 * var(--m) - 1px); 
 }
   
-.container {
+.cells-container {
     font-size: 0; /* disable white space between inline block element */
 }
   
-.container div {
+.cells-container div {
     width: var(--s);
     margin: var(--m);
     height: calc(var(--s) * 1.1547);
@@ -189,7 +192,7 @@ button {
     margin-bottom: calc(var(--m) - var(--s) * 0.2885);
 }
   
-.container::before {
+.cells-container::before {
     content: "";
     width: calc(var(--s) / 2 + var(--m));
     float: left;
@@ -203,6 +206,7 @@ button {
             'header header header header header header' 
             'rules rules rules rules rules rules' 
             'game game game game game game'
-            'display display display display display display';
+            'display display display display display display'
+            'honeycomb honeycomb honeycomb honeycomb honeycomb honeycomb';
     }
 }

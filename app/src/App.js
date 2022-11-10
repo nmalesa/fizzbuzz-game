@@ -76,7 +76,7 @@ const App = () => {
         </div>
       </div>
       <div className="display">
-        <div className="bees-and-bubble-container">
+        <div className="bees-and-bubbles-container">
           {Array.from(Array(fizz)).map((_, idx) => (
             <FizzBuzzImg
               key={idx}
@@ -105,6 +105,17 @@ const App = () => {
           alt="Illustration of fizzy drink with straw"
         />
       </div>
+      <div className="honeycomb">
+        <div className="hexagon-grid">
+          <div className="cells-container">
+            {numbers.map((number) => (
+              <div key={number}>
+                <p>{number}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
       {showModal ? (
         <Modal>
           <div className="results">
@@ -119,22 +130,6 @@ const App = () => {
           </div>
         </Modal>
       ) : null}
-      <div className="main">
-        <div className="container">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
     </div>
   );
 };
