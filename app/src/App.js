@@ -9,7 +9,7 @@ const App = () => {
   const [target, setTarget] = useState("");
   const [guess, setGuess] = useState("");
   const [gameData, setGameData] = useState([]);
-  const [fizzbuzz, setFizzBuzz] = useState(0);
+  const [fizzbuzz, setFizzBuzz] = useState("");
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
@@ -27,7 +27,9 @@ const App = () => {
       }
     }
 
-    setFizzBuzz(fizzbuzz);
+    const stringifiedFizzBuzz = fizzbuzz.toString();
+
+    setFizzBuzz(stringifiedFizzBuzz);
   };
 
   const toggleModal = () => setShowModal(!showModal);
@@ -54,7 +56,13 @@ const App = () => {
             }}
           >
             <p className="target">{target}</p>
-            <p className="question">How many times will "FizzBuzz" appear?</p>
+            <p className="question">
+              How many times will{" "}
+              <strong>
+                <em>FizzBuzz</em>
+              </strong>{" "}
+              appear?
+            </p>
             <label htmlFor="guess">
               Enter Your Guess
               <input
@@ -113,7 +121,7 @@ const App = () => {
           <div className="results">
             <p className="results-label">FizzBuzz: {fizzbuzz}</p>
             <p className="results-label">Your Guess: {guess}</p>
-            {guess === target ? (
+            {guess === fizzbuzz ? (
               <p>Congratulations! Enjoy your delicious fizzy drink!</p>
             ) : (
               <p>Oh, no! The buzzy bees drank your fizzy drink!</p>
