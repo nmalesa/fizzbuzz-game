@@ -7,7 +7,7 @@ import getFizzBuzz from "./logic/logic";
 const App = () => {
   const [target, setTarget] = useState("");
   const [guess, setGuess] = useState("");
-  // const [gameData, setGameData] = useState({});
+  const [gameData, setGameData] = useState([]);
   const [fizz, setFizz] = useState(0);
   const [buzz, setBuzz] = useState(0);
   const [fizzbuzz, setFizzbuzz] = useState(0);
@@ -20,12 +20,12 @@ const App = () => {
 
   const getGameData = (target) => {
     const gameData = getFizzBuzz(target);
-    // setGameData(gameData);
+    setGameData(gameData);
 
-    setFizz(gameData.fizz);
-    setBuzz(gameData.buzz);
-    setFizzbuzz(gameData.fizzbuzz);
-    setNumbers(gameData.numbers);
+    // setFizz(gameData.fizz);
+    // setBuzz(gameData.buzz);
+    // setFizzbuzz(gameData.fizzbuzz);
+    // setNumbers(gameData.numbers);
   };
 
   const toggleModal = () => setShowModal(!showModal);
@@ -78,29 +78,6 @@ const App = () => {
         </div>
       </div>
       <div className="display">
-        <div className="bees-and-bubbles-container">
-          {Array.from(Array(fizz)).map((_, idx) => (
-            <FizzBuzzImg
-              key={idx}
-              img={"fizz"}
-              alt={"Illustration of bubble with the word 'FIZZ'"}
-            />
-          ))}
-          {Array.from(Array(buzz)).map((_, idx) => (
-            <FizzBuzzImg
-              key={idx}
-              img={"buzz"}
-              alt={"Illustration of bee with the word 'BUZZ'"}
-            />
-          ))}
-          {Array.from(Array(fizzbuzz)).map((_, idx) => (
-            <FizzBuzzImg
-              key={idx}
-              img={"fizzbuzz"}
-              alt={"Illustration of bubble and bee with the word 'FIZZBUZZ'"}
-            />
-          ))}
-        </div>
         <img
           className="drink-img"
           src={require("./assets/drink.jpg")}
@@ -110,11 +87,33 @@ const App = () => {
       <div className="honeycomb">
         <div className="hexagon-grid">
           <div className="cells-container">
-            {numbers.map((number) => (
-              <div key={number} className="cell">
-                <p className="cell-text">{number}</p>
-              </div>
-            ))}
+            {gameData.map((data, idx) => {
+              if (data === "fizz") {
+                return (
+                  <div key={idx} className="cell">
+                    <FizzBuzzImg img="fizz" alt="Test" />
+                  </div>
+                );
+              } else if (data === "buzz") {
+                return (
+                  <div key={idx} className="cell">
+                    <FizzBuzzImg img="buzz" alt="Test" />
+                  </div>
+                );
+              } else if (data === "fizzbuzz") {
+                return (
+                  <div key={idx} className="cell">
+                    <FizzBuzzImg img="fizzbuzz" alt="Test" />
+                  </div>
+                );
+              }
+
+              return (
+                <div key={idx} className="cell">
+                  <p className="cell-text">{data}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
