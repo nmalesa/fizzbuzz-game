@@ -7,6 +7,7 @@ import getFizzBuzz from "./logic/logic";
 const App = () => {
   const [target, setTarget] = useState("");
   const [guess, setGuess] = useState("");
+  // const [gameData, setGameData] = useState({});
   const [fizz, setFizz] = useState(0);
   const [buzz, setBuzz] = useState(0);
   const [fizzbuzz, setFizzbuzz] = useState(0);
@@ -19,6 +20,7 @@ const App = () => {
 
   const getGameData = (target) => {
     const gameData = getFizzBuzz(target);
+    // setGameData(gameData);
 
     setFizz(gameData.fizz);
     setBuzz(gameData.buzz);
@@ -109,8 +111,8 @@ const App = () => {
         <div className="hexagon-grid">
           <div className="cells-container">
             {numbers.map((number) => (
-              <div key={number}>
-                <p>{number}</p>
+              <div key={number} className="cell">
+                <p className="cell-text">{number}</p>
               </div>
             ))}
           </div>

@@ -28,7 +28,7 @@ h2 {
     margin: 0;
 }
 
-.rules, .game, .display, .honeycomb {
+.rules, .game, .display {
     padding: 10px;
 }
 
@@ -53,6 +53,10 @@ h2 {
 
 .honeycomb {
     grid-area: honeycomb;
+    padding-left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .rules-text {
@@ -118,12 +122,14 @@ button {
     width: 3em;
     height: auto;
     border-radius: 50%;
+    z-index: 5;
 }
 
 .buzz {
     width: 3em;
     height: auto;
     border-radius: 20%;
+    z-index: 5;
 }
 
 .fizzbuzz {
@@ -133,6 +139,7 @@ button {
     border-style: solid;
     border-color: #fec609;
     border-width: 2px;
+    z-index: 5;
 }
 
 .results p {
@@ -178,7 +185,7 @@ button {
 }
   
 .cells-container {
-    font-size: 0; /* disable white space between inline block element */
+    font-size: 0;
 }
   
 .cells-container div {
@@ -198,7 +205,15 @@ button {
     float: left;
     height: 120%; 
     shape-outside: repeating-linear-gradient(#0000 0 calc(var(--f) - 3px), #000 0 var(--f));
-  }
+}
+
+.cell {
+    text-align: center;
+}
+
+.cell-text {
+    font-size: 18px;
+}
 
 @media (max-width: 600px) {
     .grid-container {
