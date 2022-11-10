@@ -39,8 +39,10 @@ const getFizzBuzz = (target) => {
     else gameData.push(idx);
   }
 
-  // console.log("Game data: ", gameData)
+  console.log("Game data: ", gameData)
   return gameData;
 };
+
+getFizzBuzz(17);
 
 export default getFizzBuzz;

@@ -23,7 +23,7 @@ const App = () => {
 
     for (let idx = 1; idx < gameData.length; idx++) {
       if (gameData[idx] === "fizzbuzz") {
-        fizzbuzz++
+        fizzbuzz++;
       }
     }
 
