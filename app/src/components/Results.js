@@ -1,6 +1,18 @@
 const Results = ({ fizzbuzz, guess }) => {
   return (
-    <>
+    <div>
+      <p>FizzBuzz: {fizzbuzz}</p>
+      <p>Your Guess: {guess}</p>
+      <p>Congratulations! Enjoy your delicious fizzy drink!</p>
+      <button>Play Again</button>
+    </div>
+  );
+};
+
+export default Results;
+
+{
+  /* <>
       {fizzbuzz === guess ? (
         <div>
           <p>FizzBuzz: {fizzbuzz}</p>
@@ -16,8 +28,5 @@ const Results = ({ fizzbuzz, guess }) => {
           <button>Play Again</button>
         </div>
       )}
-    </>
-  );
-};
-
-export default Results;
+    </> */
+}

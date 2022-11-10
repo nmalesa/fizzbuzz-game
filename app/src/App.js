@@ -2,7 +2,7 @@ import { createRoot } from "react-dom/client";
 import { useState, useEffect } from "react";
 import FizzBuzzImg from "./components/FizzBuzzImg";
 import Results from "./components/Results";
-import Modal from "./components/Modal"
+import Modal from "./components/Modal";
 import getFizzBuzz from "./logic/logic";
 
 const App = () => {
@@ -28,7 +28,12 @@ const App = () => {
     setNumbers(gameData.numbers);
   };
 
-  const toggleModal = () => setShowModal(!showModal)
+  const toggleModal = () => setShowModal(!showModal);
+
+  const refreshGame = () => {
+    toggleModal();
+    window.location.reload();
+  }
 
   return (
     <div className="grid-container">
@@ -105,7 +110,12 @@ const App = () => {
       </div>
       {showModal ? (
         <Modal>
-          <Results fizzbuzz={fizzbuzz} guess={guess} />
+          <div className="results">
+            <p className="results-label">FizzBuzz: {fizzbuzz}</p>
+            <p className="results-label">Your Guess: {guess}</p>
+            <p>Congratulations! Enjoy your delicious fizzy drink!</p>
+            <button onClick={refreshGame}>Play Again</button>
+          </div>
         </Modal>
       ) : null}
     </div>
