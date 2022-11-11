@@ -123,21 +123,13 @@ button {
 }
 
 .fizz {
-    width: 30%;
+    width: 3em;
     border-radius: 50%;
 }
 
 .buzz {
-    width: 30%;
+    width: 3em;
     border-radius: 20%;
-}
-
-.fizzbuzz {
-    width: 90%;
-    border-radius: 30%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .results p {

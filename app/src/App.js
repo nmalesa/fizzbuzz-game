@@ -87,6 +87,23 @@ const App = () => {
         </div>
       </div>
       <div className="display">
+        <div className="bees-and-bubbles-container">
+          {guess === fizzbuzz
+            ? Array.from(Array(fizz)).map((_, idx) => (
+                <FizzBuzzImg
+                  key={idx}
+                  img={"fizz"}
+                  alt={"Illustration of bubble with the word 'FIZZ'"}
+                />
+              ))
+            : Array.from(Array(buzz)).map((_, idx) => (
+                <FizzBuzzImg
+                  key={idx}
+                  img={"buzz"}
+                  alt={"Illustration of bee with the word 'BUZZ'"}
+                />
+              ))}
+        </div>
         <img
           className="drink-img"
           src={require("./assets/drink.jpg")}
@@ -103,22 +120,6 @@ const App = () => {
             ))}
           </div>
         </div>
-      </div>
-      <div>
-        {Array.from(Array(fizz)).map((_, idx) => (
-          <FizzBuzzImg
-            key={idx}
-            img={"fizz"}
-            alt={"Illustration of bubble with the word 'FIZZ'"}
-          />
-        ))}
-        {Array.from(Array(buzz)).map((_, idx) => (
-          <FizzBuzzImg
-            key={idx}
-            img={"buzz"}
-            alt={"Illustration of bee with the word 'BUZZ'"}
-          />
-        ))}
       </div>
       {showModal ? (
         <Modal>
