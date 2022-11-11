@@ -1,44 +1,29 @@
-# Are you a developer? Have you ever seen a light bulb? We've got a job for you. #
+# FizzBuzz:  The Game
 
-But first an introduction...
+## Save your fizzy drink from the buzzy bees!
 
-## About Us ##
+In FizzBuzz, you are given a random target number. For every number from 1 to the target, multiples of three will print <strong><em>Fizz</em></strong>, and multiples of five will print <strong><em>Buzz</em></strong>. Multiples of both three and five will print <strong><em>FizzBuzz</em></strong>!
 
-We're the development team behind [1000Bulbs.com](http://www.1000bulbs.com). We build the software that sells more light bulbs online than you'd probably believe *and* we've got a pretty neat development stack including:
+The object of the game is to guess how many times the word <strong><em>FizzBuzz</em></strong> will appear.
 
-* Ruby on Rails
-* PHP
-* Resque
-* Docker
-* SASS/SCSS, Foundation
-* jQuery, Jasmine, Coffeescript
-* PostgreSQL/MySQL
-* RabbitMQ
-* Redis/Memcached
-* Chef
-* Continuous Integration
-* GitHub (obviously)
+### Requirements
 
-## About You (ideally) ##
+To play FizzBuzz, you must have [Node.js](https://nodejs.org/en/) on your local machine.
 
-You're an excellent developer, or at least you try to be. You've got experience building things with some or all of the tech listed above (or would like to). You prefer automated testing.
+### Installation
 
-We're based out of [Garland, TX](https://www.youtube.com/watch?v=Hf8hCZpEpFo) which isn't the most exciting place (though it has been featured multiple times on *Storage Wars: Texas*). Luckily, you don't have to be here, because we're 100% remote!
+Clone this repository to your local machine.
 
-### Benefits include ###
+Inside the `app` directory, run `yarn install` to install dependencies.
 
-* 100% remote
-* Monthly team lunches on us (for those in the DFW area)
-* Competitive Salary
-* Awesome Hardware: M1 Macbook Pro
-* Health and Dental insurance
-* Paid vacation and sick days
-* 401k participation
+### Running the Game
 
-## Submitting Your Application ##
+FizzBuzz uses a build tool called [Parcel](https://parceljs.org/).  From the `app` directory, run `yarn dev` to start the Parcel development server.
 
-1. Clone/fork this repository.
-2. Follow the instructions in each of the subdirectories' README files.
-3. Send us a pull request through GitHub or let us know where we can find your repo.
+Parcel will launch the application on [http://localhost:1234](http://localhost:1234).  (Note that Parcel may default to a different port if 1234 is already being used.)
 
-Should you be new to Git, we recommend [Pro Git](http://git-scm.com/book).
+### Testing
+
+FizzBuzz includes a test suite.  To test, run `yarn test` from inside the `app` directory.  Test results should display in the console.
+
+Happy fizzbuzzing!
